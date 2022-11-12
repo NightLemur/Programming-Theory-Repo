@@ -10,10 +10,8 @@ public class MenuManager : MonoBehaviour
 
     public static MenuManager instance;
 
-    private string _playerName;
-
     // ENCAPSULATION
-    public string PlayerName { get => _playerName; }
+    public string PlayerName { get; private set; }
 
     // Start is called before the first frame update
     void Awake()
@@ -32,6 +30,6 @@ public class MenuManager : MonoBehaviour
     }
     public void OnNameInputFieldFinishedEdit()
     {
-        _playerName = PlayerNameInputField.text;
+        PlayerName = PlayerNameInputField.text;
     }
 }
